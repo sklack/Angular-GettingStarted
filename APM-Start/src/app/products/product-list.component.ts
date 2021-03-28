@@ -47,7 +47,7 @@ export class ProductListComponent implements OnInit {
 
   constructor() {
     this.filteredProducts = this.products;
-    this.listFilter = 'cart';
+    this.listFilter = '';
   }
 
   performFilter(filterBy: string): IProduct[] {
@@ -58,6 +58,10 @@ export class ProductListComponent implements OnInit {
 
   toggleImage(): void {
     this.showImage = !this.showImage;
+  }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product list ' + message;
   }
 
   ngOnInit(): void {
